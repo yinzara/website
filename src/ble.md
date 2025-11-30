@@ -28,7 +28,7 @@ If the gadget is unable to connect an error is returned. If the gadget required 
 
 The client is able to send an `identify` to the Improv service if it is in the states "Require Authorization" and "Authorized". When received, and enabled, the gadget will identify itself, like playing a sound or flashing a light. It is up to the gadget to decide if and what interaction to pick.
 
-The client is able to send an `device info` to the Improv service if it is in the states "Require Authorization" and "Authorized". When received, and supported, the gadget will return the device information in the RPC response characteristic.
+The client is able to send a `device info` to the Improv service if it is in the states "Require Authorization" and "Authorized". When received, and supported, the gadget will return the device information in the RPC response characteristic.
 
 ## Revision history
 
@@ -149,8 +149,13 @@ Does not require the Improv service to be authorized.
 Should only be sent if the capability characteristic indicates that device info is supported.
 
 | Byte | Description            |
+<<<<<<< HEAD
 |------|------------------------|
 | 03   | command (`0x03`)       |
+=======
+|------| ---------------------- |
+| 03   | command                |
+>>>>>>> upstream/main
 | 00   | 0 data bytes / no data |
 | CS   | checksum               |
 
@@ -160,6 +165,7 @@ Order of strings: Firmware name, firmware version, hardware chip/variant, device
 
 Example: `ESPHome`, `2021.11.0`, `ESP32-C3`, `Temperature Monitor`.
 
+<<<<<<< HEAD
 ### RPC Command: Request scanned Wi-Fi networks
 
 Sends a request for the device to send the Wi-Fi networks it sees.
@@ -181,6 +187,8 @@ Example: `MyWirelessNetwork`, `-60`, `WPA2`, `MyOtherWirelessNetwork`, `-52`, `W
 
 A response with no strings means no SSID was found.
 
+=======
+>>>>>>> upstream/main
 ### Characteristic: RPC Result
 
 Characteristic UUID: `00467768-6228-2272-4663-277478268004`
